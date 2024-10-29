@@ -51,7 +51,6 @@
     "jest": {
         "resetMocks": false,
         "clearMocks": true,
-        "globalSetup": "<rootDir>/test/global-setup.ts",
         "transformIgnorePatterns": [
             "node_modules/((?!nostr-hooks)/)"
         ]

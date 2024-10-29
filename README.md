@@ -1,5 +1,6 @@
 # NIP-15 Storefront inject
 
+Check out the [Demo Storefront here](https://czino.github.io/nostr-nip-15-storefront-inject)
 ## How to use
 
 1. Install
