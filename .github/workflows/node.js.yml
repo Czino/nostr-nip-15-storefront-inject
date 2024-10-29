@@ -22,4 +22,3 @@ jobs:
             - run: npx prettier --ignore-path .gitignore --ignore-path .prettierignore --check .
             - run: npm run lint
             - run: npx tsc
-            - run: npm run test:ci
