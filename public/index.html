@@ -13,8 +13,16 @@
             <a href="#detail-dynamic" class="p-4 bg-dark-2">Product Detail (Dynamic)</a>
         </nav>
         <main>
-            <div id="list" class="nostr-product-list" data-pubkey="fd511db3de511f07b1de1634ef4e603fb7a51af5b14a7630b8df0f1bd0c705e3"></div>
-            <div id="carousel" class="nostr-product-carousel hidden" data-pubkey="fd511db3de511f07b1de1634ef4e603fb7a51af5b14a7630b8df0f1bd0c705e3"></div>
+            <div
+                id="list"
+                class="nostr-product-list"
+                data-pubkey="fd511db3de511f07b1de1634ef4e603fb7a51af5b14a7630b8df0f1bd0c705e3"
+            ></div>
+            <div
+                id="carousel"
+                class="nostr-product-carousel hidden"
+                data-pubkey="fd511db3de511f07b1de1634ef4e603fb7a51af5b14a7630b8df0f1bd0c705e3"
+            ></div>
             <div id="detail" class="nostr-product-detail hidden" data-id="0f1a3984-7a72-4c6f-b1dc-bc170b6c4d8e"></div>
             <div id="detail-dynamic" class="nostr-product-detail hidden"></div>
         </main>
@@ -25,13 +33,13 @@
             const showExample = (id) => {
                 const $navItem = document.querySelector(`a[href="#${id}"]`)
                 const $currentExample = document.getElementById(id)
-                $navItems.forEach($current => {
+                $navItems.forEach(($current) => {
                     $current.classList.remove('bg-highlight-1')
                     $current.classList.add('bg-dark-2')
                 })
                 $navItem.classList.remove('bg-dark-2')
                 $navItem.classList.add('bg-highlight-1')
-                $examples.forEach($example => {
+                $examples.forEach(($example) => {
                     $example.classList.add('hidden')
                 })
                 $currentExample.classList.remove('hidden')
