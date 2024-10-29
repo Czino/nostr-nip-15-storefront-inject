@@ -14,6 +14,9 @@ type Props = {
     id?: string
     imageProxy?: string
 }
+const DEFAULTS = {
+    PLACEHOLDER_TAGS: 4,
+}
 export const ProductDetail = ({ id = '' }: Props) => {
     const [customNdk] = useCustomNdk()
     const productId = id || window.location.pathname.replace(/\/$/u, '').split('/').pop() || ''
@@ -94,7 +97,7 @@ export const ProductDetail = ({ id = '' }: Props) => {
                             <TagList tags={productInfo.tags} />
                         ) : (
                             <div className="animate-pulse">
-                                <TagList tags={Array(4).fill(['t', '      '])} />
+                                <TagList tags={Array(DEFAULTS.PLACEHOLDER_TAGS).fill(['t', '      '])} />
                             </div>
                         )}
                         <div ref={ctaRef}>

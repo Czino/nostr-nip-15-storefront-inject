@@ -279,6 +279,12 @@ module.exports = {
             },
         },
         {
+            files: ['./src/components/icons/*.tsx'],
+            rules: {
+                'max-len': 'off',
+            },
+        },
+        {
             files: ['./test/data/*.ts'],
             rules: {
                 'max-len': 'off',
