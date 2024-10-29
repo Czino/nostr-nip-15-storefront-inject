@@ -44,6 +44,7 @@ This will instruct the app to load images through the proxy and pass necessary p
 - `$WIDTH`: will be automatically replaced with the width defined in the component
 
 ## Todo
+- [ ] add unit tests
 - [ ] make show/hide pricing configurable
 - [ ] make show/hide out of stock products configurable
 - [ ] make product detail URL configurable
