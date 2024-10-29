@@ -2,6 +2,7 @@
     "name": "nostr-nip-15-storefront-inject",
     "version": "1.0.0",
     "type": "module",
+    "homepage": "https://czino.github.io/nostr-nip-15-storefront-inject",
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
