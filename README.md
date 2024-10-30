@@ -36,6 +36,16 @@ Each HTML element will need either the stall pubkey or the product id to functio
 <div class="nostr-product-detail" data-id="0f1a3984-7a72-4c6f-b1dc-bc170b6c4d8e"></div>
 ```
 
+## Dynamic Product URLs
+Because each website can have a different URL pattern for product pages you can define a custom product URL The pattern is the following:
+
+`data-product-url="https://example.com/path/to/$PRODUCTNAME/$PRODUCTID"`
+
+This will instruct the app to link to product detail pages respecting the pattern
+
+- `$PRODUCTID`: will be automatically replaced with the product it
+- `$PRODUCTNAME`: will be automatically replaced with the url encoded product name
+
 ## Dynamic Image URLs
 Because product images are often uploaded in one size and served as one size, you can define a custom image URL proxy to serve images in any size. The pattern is the following:
 
@@ -48,4 +58,3 @@ This will instruct the app to load images through the proxy and pass necessary p
 
 ## Todo
 - [ ] make show/hide out of stock products configurable
-- [ ] make product detail URL configurable
