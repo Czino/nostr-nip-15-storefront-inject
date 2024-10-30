@@ -70,11 +70,18 @@
 
                 showExample(id)
             })
-            
+
             const isDemoPage = !window.location.href.includes('localhost')
             if (isDemoPage) {
-                const $components = Array.from(document.querySelectorAll('.nostr-product-list, .nostr-product-carousel, .nostr-product-detail'))
-                $components.forEach($component => $component.setAttribute('data-product-url', window.location.origin + '/nostr-nip-15-storefront-inject/product/$PRODUCTNAME/$PRODUCTID'))
+                const $components = Array.from(
+                    document.querySelectorAll('.nostr-product-list, .nostr-product-carousel, .nostr-product-detail'),
+                )
+                $components.forEach(($component) =>
+                    $component.setAttribute(
+                        'data-product-url',
+                        window.location.origin + '/nostr-nip-15-storefront-inject/product/$PRODUCTNAME/$PRODUCTID',
+                    ),
+                )
             }
         </script>
     </body>
