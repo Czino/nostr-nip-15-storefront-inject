@@ -9,11 +9,12 @@ import { ProductItem } from './ProductItem'
 
 type Props = {
     pubkey?: string
+    productUrl?: string
     tags?: NDKTag[]
     imageProxy?: string
     showPrice?: boolean
 }
-export const ProductList = ({ pubkey = '', tags, imageProxy, showPrice }: Props) => {
+export const ProductList = ({ pubkey = '', productUrl, tags, imageProxy, showPrice }: Props) => {
     const [customNdk] = useCustomNdk()
     const [searchTags] = useState(tags || getTagsFromUrl(window.location.href))
 
@@ -29,6 +30,7 @@ export const ProductList = ({ pubkey = '', tags, imageProxy, showPrice }: Props)
                     <ProductItem
                         key={productInfo.id}
                         product={productInfo}
+                        productUrl={productUrl}
                         width={400}
                         showPrice={showPrice}
                         imageProxy={imageProxy}

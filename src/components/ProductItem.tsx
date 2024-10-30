@@ -4,10 +4,26 @@ import { LoadingAnimation } from './icons/LoadingAnimation'
 
 const DEFAULTS = {
     WIDTH: 340,
+    PRODUCTURL: '/product/$PRODUCTNAME/$PRODUCTID',
 }
-type Props = { product: NIP15Product; showPrice?: boolean; width?: number; imageProxy?: string }
-export const ProductItem = ({ product, showPrice, width = DEFAULTS.WIDTH, imageProxy }: Props) => (
-    <a href={`/product/${encodeURI(product.name)}/${product.id}`} className="grid grid-cols-1 gap-1">
+const getProductURL = (url: string, productId: string, productName: string) =>
+    url.replace('$PRODUCTID', productId).replace('$PRODUCTNAME', encodeURI(productName || ''))
+
+type Props = {
+    product: NIP15Product
+    productUrl?: string
+    showPrice?: boolean
+    width?: number
+    imageProxy?: string
+}
+export const ProductItem = ({
+    product,
+    productUrl = DEFAULTS.PRODUCTURL,
+    showPrice,
+    width = DEFAULTS.WIDTH,
+    imageProxy,
+}: Props) => (
+    <a href={getProductURL(productUrl, product.id, product.name)} className="grid grid-cols-1 gap-1">
         <div className="w-full relative aspect-[2/3] overflow-hidden">
             <div className="absolute inset-0 flex justify-center items-center -z-1">
                 <LoadingAnimation />
