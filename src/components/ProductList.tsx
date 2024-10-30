@@ -11,8 +11,9 @@ type Props = {
     pubkey?: string
     tags?: NDKTag[]
     imageProxy?: string
+    showPrice?: boolean
 }
-export const ProductList = ({ pubkey = '', tags, imageProxy }: Props) => {
+export const ProductList = ({ pubkey = '', tags, imageProxy, showPrice }: Props) => {
     const [customNdk] = useCustomNdk()
     const [searchTags] = useState(tags || getTagsFromUrl(window.location.href))
 
@@ -25,7 +26,13 @@ export const ProductList = ({ pubkey = '', tags, imageProxy }: Props) => {
         <div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {availableProducts.map((productInfo) => (
-                    <ProductItem key={productInfo.id} product={productInfo} width={400} imageProxy={imageProxy} />
+                    <ProductItem
+                        key={productInfo.id}
+                        product={productInfo}
+                        width={400}
+                        showPrice={showPrice}
+                        imageProxy={imageProxy}
+                    />
                 ))}
             </div>
             {!eose && <div className="text-center">Loading...</div>}

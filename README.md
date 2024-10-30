@@ -28,6 +28,9 @@ Each HTML element will need either the stall pubkey or the product id to functio
 <div class="nostr-product-list" data-pubkey="fd511db3de511f07b1de1634ef4e603fb7a51af5b14a7630b8df0f1bd0c705e3"></div>
 ```
 
+## Options
+- `data-show-price`: if set to `true`, then prices will be shown on product items
+
 ### Example Product Detail
 ```html
 <div class="nostr-product-detail" data-id="0f1a3984-7a72-4c6f-b1dc-bc170b6c4d8e"></div>
@@ -44,7 +47,5 @@ This will instruct the app to load images through the proxy and pass necessary p
 - `$WIDTH`: will be automatically replaced with the width defined in the component
 
 ## Todo
-- [ ] add unit tests
-- [ ] make show/hide pricing configurable
 - [ ] make show/hide out of stock products configurable
 - [ ] make product detail URL configurable

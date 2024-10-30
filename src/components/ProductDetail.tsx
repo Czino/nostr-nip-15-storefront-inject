@@ -12,12 +12,12 @@ import { TagList } from './TagList'
 
 type Props = {
     id?: string
-    imageProxy?: string
+    showPrice?: boolean
 }
 const DEFAULTS = {
     PLACEHOLDER_TAGS: 4,
 }
-export const ProductDetail = ({ id = '' }: Props) => {
+export const ProductDetail = ({ id = '', showPrice }: Props) => {
     const [customNdk] = useCustomNdk()
     const productId = id || window.location.pathname.replace(/\/$/u, '').split('/').pop() || ''
     useNostrHooks(customNdk)
@@ -60,7 +60,9 @@ export const ProductDetail = ({ id = '' }: Props) => {
                         <div className="grid grid-cols-1 gap-2">
                             {!isLoading ? (
                                 <>
-                                    <div className="text-xl italic">Name your price</div>
+                                    <div className="text-xl italic">
+                                        {showPrice ? content.currency + content.price : 'Name your price'}
+                                    </div>
                                     <div>
                                         <h2 className="font-bold text-xl">Shipping</h2>
                                         {content.shipping

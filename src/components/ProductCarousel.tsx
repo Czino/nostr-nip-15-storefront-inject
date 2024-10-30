@@ -9,10 +9,11 @@ const DEFAULTS = {
 
 type Props = {
     pubkey?: string
+    showPrice?: boolean
     limit?: number
     imageProxy?: string
 }
-export const ProductCarousel = ({ pubkey = '', limit = DEFAULTS.LIMIT, imageProxy }: Props) => {
+export const ProductCarousel = ({ pubkey = '', showPrice, limit = DEFAULTS.LIMIT, imageProxy }: Props) => {
     const [customNdk] = useCustomNdk()
     useNostrHooks(customNdk)
     const { productInfos, eose } = useGetProductEvents({ pubkey, limit })
@@ -27,7 +28,7 @@ export const ProductCarousel = ({ pubkey = '', limit = DEFAULTS.LIMIT, imageProx
                         key={productInfo.id}
                         className={['snap-center flex-shrink-0 w-3/4 px-4', 'md:w-3/5', 'lg:px-1 lg:w-1/6'].join(' ')}
                     >
-                        <ProductItem product={productInfo} width={340} imageProxy={imageProxy} />
+                        <ProductItem product={productInfo} showPrice={showPrice} width={340} imageProxy={imageProxy} />
                     </div>
                 ))}
             </div>

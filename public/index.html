@@ -5,33 +5,44 @@
         <title>NIP-15</title>
     </head>
 
-    <body class="bg-dark-1 text-light-1">
-        <nav class="flex flex-row">
-            <a href="#list" class="p-4 bg-dark-2">Product list</a>
-            <a href="#carousel" class="p-4 bg-dark-2">Carousel</a>
-            <a href="#detail" class="p-4 bg-dark-2">Product Detail</a>
-            <a href="#detail-dynamic" class="p-4 bg-dark-2">Product Detail (Dynamic)</a>
+    <body class="bg-dark-1 text-light-1 pt-20">
+        <nav class="w-full flex flex-row fixed top-0 z-1 bg-dark-2 shadow">
+            <a href="/#list" class="p-4 bg-dark-2">Product list</a>
+            <a href="/#carousel" class="p-4 bg-dark-2">Carousel</a>
+            <a href="/#detail" class="p-4 bg-dark-2">Product Detail</a>
+            <a href="/#detail-dynamic" class="p-4 bg-dark-2">Product Detail (Dynamic)</a>
         </nav>
         <main>
             <div
                 id="list"
                 class="nostr-product-list"
                 data-pubkey="fd511db3de511f07b1de1634ef4e603fb7a51af5b14a7630b8df0f1bd0c705e3"
+                data-show-price="true"
             ></div>
             <div
                 id="carousel"
                 class="nostr-product-carousel hidden"
                 data-pubkey="fd511db3de511f07b1de1634ef4e603fb7a51af5b14a7630b8df0f1bd0c705e3"
+                data-show-price="true"
             ></div>
-            <div id="detail" class="nostr-product-detail hidden" data-id="0f1a3984-7a72-4c6f-b1dc-bc170b6c4d8e"></div>
-            <div id="detail-dynamic" class="nostr-product-detail hidden"></div>
+            <div
+                id="detail"
+                class="nostr-product-detail hidden"
+                data-id="0f1a3984-7a72-4c6f-b1dc-bc170b6c4d8e"
+                data-show-price="true"
+            ></div>
+            <div
+                id="detail-dynamic"
+                class="nostr-product-detail hidden"
+                data-show-price="true"
+            ></div>
         </main>
         <script>
             const $navItems = document.querySelectorAll('nav a')
             const $examples = document.querySelectorAll('main > div')
 
             const showExample = (id) => {
-                const $navItem = document.querySelector(`a[href="#${id}"]`)
+                const $navItem = document.querySelector(`a[href="/#${id}"]`)
                 const $currentExample = document.getElementById(id)
                 $navItems.forEach(($current) => {
                     $current.classList.remove('bg-highlight-1')
@@ -45,12 +56,21 @@
                 $currentExample.classList.remove('hidden')
             }
 
-            showExample('list')
+            if (window.location.href.includes('product')) {
+                showExample('detail-dynamic')
+            } else {
+                const id = window.location.hash.replace('#', '')
+                showExample(id || 'list')
+            }
 
             window.navigation.addEventListener('navigate', (e) => {
-                e.preventDefault()
                 const url = new URL(e.destination.url)
+                if (url.href.includes('product')) {
+                    return showExample('detail-dynamic')
+                }
                 const id = url.hash.replace('#', '')
+
+
                 if (!id) return
 
                 showExample(id)

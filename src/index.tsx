@@ -9,21 +9,15 @@ const $carousels = Array.from(
 )
 $carousels.forEach(($carousel) => {
     const root = ReactDOM.createRoot($carousel)
-    const pubkey = $carousel.dataset.pubkey
-    const imageProxy = $carousel.dataset.imageProxy
-    root.render(<ProductCarousel pubkey={pubkey} imageProxy={imageProxy} />)
+    root.render(<ProductCarousel {...$carousel.dataset} />)
 })
 const plps = Array.from(document.getElementsByClassName('nostr-product-list') as HTMLCollectionOf<HTMLElement>)
 plps.forEach(($plp) => {
     const root = ReactDOM.createRoot($plp)
-    const pubkey = $plp.dataset.pubkey
-    const imageProxy = $plp.dataset.imageProxy
-    root.render(<ProductList pubkey={pubkey} imageProxy={imageProxy} />)
+    root.render(<ProductList {...$plp.dataset} />)
 })
 const $pdps = Array.from(document.getElementsByClassName('nostr-product-detail') as HTMLCollectionOf<HTMLElement>)
 $pdps.forEach(($pdp) => {
     const root = ReactDOM.createRoot($pdp)
-    const id = $pdp.dataset.id
-    const imageProxy = $pdp.dataset.imageProxy
-    root.render(<ProductDetail id={id} imageProxy={imageProxy} />)
+    root.render(<ProductDetail {...$pdp.dataset} />)
 })
