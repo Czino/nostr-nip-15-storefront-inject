@@ -31,11 +31,7 @@
                 data-id="0f1a3984-7a72-4c6f-b1dc-bc170b6c4d8e"
                 data-show-price="true"
             ></div>
-            <div
-                id="detail-dynamic"
-                class="nostr-product-detail hidden"
-                data-show-price="true"
-            ></div>
+            <div id="detail-dynamic" class="nostr-product-detail hidden" data-show-price="true"></div>
         </main>
         <script>
             const $navItems = document.querySelectorAll('nav a')
@@ -69,7 +65,6 @@
                     return showExample('detail-dynamic')
                 }
                 const id = url.hash.replace('#', '')
-
 
                 if (!id) return
 
