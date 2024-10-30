@@ -10,7 +10,6 @@
             <a href="/nostr-nip-15-storefront-inject#list" class="p-4 bg-dark-2">Product list</a>
             <a href="/nostr-nip-15-storefront-inject#carousel" class="p-4 bg-dark-2">Carousel</a>
             <a href="/nostr-nip-15-storefront-inject#detail" class="p-4 bg-dark-2">Product Detail</a>
-            <a href="/nostr-nip-15-storefront-inject#detail-dynamic" class="p-4 bg-dark-2">Product Detail (Dynamic)</a>
         </nav>
         <main>
             <div
@@ -38,7 +37,7 @@
             const $examples = document.querySelectorAll('main > div')
 
             const showExample = (id) => {
-                const $navItem = document.querySelector(`a[href="/#${id}"]`)
+                const $navItem = document.querySelector(`a[href="/nostr-nip-15-storefront-inject#${id.replace('-dynamic', '')}"]`)
                 const $currentExample = document.getElementById(id)
                 $navItems.forEach(($current) => {
                     $current.classList.remove('bg-highlight-1')
