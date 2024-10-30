@@ -1,10 +1,11 @@
+import { GLOBAL_DEFAULTS } from '../constants'
 import { getImageUrl } from '../helpers/getImageUrl'
 import { NIP15Product } from '../types'
 import { LoadingAnimation } from './icons/LoadingAnimation'
 
 const DEFAULTS = {
     WIDTH: 340,
-    PRODUCTURL: '/product/$PRODUCTNAME/$PRODUCTID',
+    PRODUCTURL: GLOBAL_DEFAULTS.PRODUCTURL,
 }
 const getProductURL = (url: string, productId: string, productName: string) =>
     url.replace('$PRODUCTID', productId).replace('$PRODUCTNAME', encodeURI(productName || ''))

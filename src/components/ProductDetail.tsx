@@ -1,6 +1,8 @@
 import { useNostrHooks } from 'nostr-hooks'
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { GLOBAL_DEFAULTS } from '../constants'
 import { elementAboveViewPortBottom } from '../helpers/elementAboveViewPortBottom'
+import { extractProductIdFromUrl } from '../helpers/extractProductIdFromUrl'
 import { useCustomNdk } from '../hooks/useCustomNdk'
 import { useGetProductEvent } from '../hooks/useGetProductEvent'
 import { ShippingInfo } from '../types'
@@ -12,14 +14,16 @@ import { TagList } from './TagList'
 
 type Props = {
     id?: string
+    productUrl?: string
     showPrice?: boolean
 }
 const DEFAULTS = {
     PLACEHOLDER_TAGS: 4,
+    PRODUCTURL: GLOBAL_DEFAULTS.PRODUCTURL,
 }
-export const ProductDetail = ({ id = '', showPrice }: Props) => {
+export const ProductDetail = ({ id = '', productUrl = DEFAULTS.PRODUCTURL, showPrice }: Props) => {
     const [customNdk] = useCustomNdk()
-    const productId = id || window.location.pathname.replace(/\/$/u, '').split('/').pop() || ''
+    const productId = id || extractProductIdFromUrl(window.location.href, productUrl) || ''
     useNostrHooks(customNdk)
     const ctaRef = useRef<HTMLDivElement>(null)
     const [showFixedCTA, setShowFixedCTA] = useState(true)
