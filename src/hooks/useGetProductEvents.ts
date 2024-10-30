@@ -1,7 +1,7 @@
 import { NDKKind, NDKTag } from '@nostr-dev-kit/ndk'
 import { useSubscribe } from 'nostr-hooks'
 import { useMemo } from 'react'
-import { NIP15Product } from '../components/types'
+import { NIP15Product } from '../types'
 
 type Props = {
     pubkey: string

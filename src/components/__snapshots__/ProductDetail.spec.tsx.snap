@@ -1,0 +1,342 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductDetail renders error when no product id is passed 1`] = `
+<DocumentFragment>
+  <div
+    class="bg-red-700 text-white p-4 rounded text-center"
+  >
+    Product Detail: Missing attribute data-id
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ProductDetail renders product detail correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="flex justify-center"
+  >
+    <div
+      class="max-w-[1600px] w-full"
+    >
+      <div
+        class="grid lg:grid-cols-2 gap-4 items-start"
+      >
+        <div
+          class="relative w-full aspect-[3/4]"
+        >
+          <div
+            class="absolute inset-0 flex justify-center items-center"
+          >
+            <svg
+              class="animate-spin h-7 w-7 text-light-1"
+              fill="none"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                class="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                stroke-width="4"
+              />
+              <path
+                class="opacity-75"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                fill="currentColor"
+              />
+            </svg>
+          </div>
+          <div
+            class="relative z-1"
+          >
+            <div
+              class="relative"
+            >
+              <div
+                class="relative overflow-x-auto snap-x snap-mandatory"
+              >
+                <div
+                  class="flex space-x-4"
+                >
+                  <div
+                    class="snap-start flex-shrink-0 w-full"
+                  >
+                    <img
+                      alt=""
+                      class="w-full h-auto"
+                      src="https://f004.backblazeb2.com/file/plebeian-market/P_listing_BHQQ_media_3041b54d1a0b9de92aa91999214b8848bc6951fe7afb5f9b3ead59d69d03aaf7.jpeg"
+                    />
+                  </div>
+                  <div
+                    class="snap-start flex-shrink-0 w-full"
+                  >
+                    <img
+                      alt=""
+                      class="w-full h-auto"
+                      src="https://f004.backblazeb2.com/file/plebeian-market/P_listing_BHQQ_media_3041b54d1a0b9de92aa91999214b8848bc6951fe7afb5f9b3ead59d69d03aaf8.jpeg"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="absolute inset-0 flex justify-between items-center p-4 pe-none"
+              >
+                <button
+                  class="w-12 h-12 flex justify-center items-center bg-transparent rounded-full text-dark-1 pe-auto backdrop-blur-md backdrop-brightness-110 opacity-30"
+                  disabled=""
+                >
+                  <svg
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14.2893 5.70708C13.8988 5.31655 13.2657 5.31655 12.8751 5.70708L7.98768 10.5993C7.20729 11.3805 7.2076 12.6463 7.98837 13.427L12.8787 18.3174C13.2693 18.7079 13.9024 18.7079 14.293 18.3174C14.6835 17.9269 14.6835 17.2937 14.293 16.9032L10.1073 12.7175C9.71678 12.327 9.71678 11.6939 10.1073 11.3033L14.2893 7.12129C14.6799 6.73077 14.6799 6.0976 14.2893 5.70708Z"
+                      fill="#0F0F0F"
+                    />
+                  </svg>
+                </button>
+                <button
+                  class="w-12 h-12 flex justify-center items-center bg-transparent rounded-full text-dark-1 pe-auto backdrop-blur-md backdrop-brightness-110 "
+                >
+                  <svg
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z"
+                      fill="#0F0F0F"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="grid grid-cols-1 gap-4 p-4 lg:p-0"
+        >
+          <h1
+            class="text-4xl"
+          >
+            Cat Balaclava - Cactus
+          </h1>
+          <div
+            class="grid grid-cols-1 gap-2"
+          >
+            <div
+              class="text-xl italic"
+            >
+              Name your price
+            </div>
+            <div>
+              <h2
+                class="font-bold text-xl"
+              >
+                Shipping
+              </h2>
+              <div
+                class="capitalize"
+              >
+                e595f45dc6c9e7665d108e8ea7940885a42e492918a522d44a1fc35494a4aa48: USD0
+              </div>
+              <div
+                class="capitalize"
+              >
+                world: USD0
+              </div>
+            </div>
+          </div>
+          <div>
+            Bring a touch of the desert to your home with this quirky cactus balaclava. It's a fun and unique way to keep your cat looking cool and comfy!
+          </div>
+          <div
+            class="flex flex-row gap-1 flex-wrap"
+          >
+            <a
+              class="px-2 py-1 text-xs bg-light-1 text-dark-1 rounded cursor-pointer"
+              href="/shop?tags=cat"
+            >
+              cat
+            </a>
+          </div>
+          <div>
+            <button
+              class="w-full bg-highlight-1 p-3 rounded text-xl text-light-1 "
+            >
+              Get in touch
+            </button>
+          </div>
+        </div>
+        <div
+          class="grid lg:hidden bottom-0 left-0 right-0 p-4 bg-dark-2 shadow-all fixed"
+        >
+          <button
+            class="w-full bg-highlight-1 p-3 rounded text-xl text-light-1 "
+          >
+            Get in touch
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ProductDetail renders product detail with placeholders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="flex justify-center"
+  >
+    <div
+      class="max-w-[1600px] w-full"
+    >
+      <div
+        class="grid lg:grid-cols-2 gap-4 items-start"
+      >
+        <div
+          class="relative w-full aspect-[3/4]"
+        >
+          <div
+            class="absolute inset-0 flex justify-center items-center"
+          >
+            <svg
+              class="animate-spin h-7 w-7 text-light-1"
+              fill="none"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                class="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                stroke-width="4"
+              />
+              <path
+                class="opacity-75"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                fill="currentColor"
+              />
+            </svg>
+          </div>
+          <div
+            class="relative z-1"
+          />
+        </div>
+        <div
+          class="grid grid-cols-1 gap-4 p-4 lg:p-0"
+        >
+          <div
+            class="animate-pulse bg-light-1 w-1/2 rounded-full text-4xl"
+          >
+             
+          </div>
+          <div
+            class="grid grid-cols-1 gap-2"
+          >
+            <div
+              class="w-1/3 animate-pulse text-xl rounded-full bg-light-1"
+            >
+               
+            </div>
+            <div
+              class="w-1/4 grid grid-cols-1 gap-1"
+            >
+              <div
+                class="animate-pulse text-xl rounded-full bg-light-1 "
+              />
+              <div
+                class="animate-pulse rounded-full bg-light-1"
+              >
+                 
+              </div>
+              <div
+                class="animate-pulse rounded-full bg-light-1"
+              >
+                 
+              </div>
+            </div>
+          </div>
+          <div
+            class="grid grid-cols-1 gap-1"
+          >
+            <div
+              class="animate-pulse rounded-full bg-light-1"
+            >
+               
+            </div>
+            <div
+              class="animate-pulse rounded-full bg-light-1"
+            >
+               
+            </div>
+            <div
+              class="animate-pulse rounded-full bg-light-1"
+            >
+               
+            </div>
+          </div>
+          <div
+            class="animate-pulse"
+          >
+            <div
+              class="flex flex-row gap-1 flex-wrap"
+            >
+              <a
+                class="px-2 py-1 text-xs bg-light-1 text-dark-1 rounded cursor-pointer"
+                href="/shop?tags=      "
+              >
+                      
+              </a>
+              <a
+                class="px-2 py-1 text-xs bg-light-1 text-dark-1 rounded cursor-pointer"
+                href="/shop?tags=      "
+              >
+                      
+              </a>
+              <a
+                class="px-2 py-1 text-xs bg-light-1 text-dark-1 rounded cursor-pointer"
+                href="/shop?tags=      "
+              >
+                      
+              </a>
+              <a
+                class="px-2 py-1 text-xs bg-light-1 text-dark-1 rounded cursor-pointer"
+                href="/shop?tags=      "
+              >
+                      
+              </a>
+            </div>
+          </div>
+          <div>
+            <button
+              class="w-full bg-highlight-1 p-3 rounded text-xl text-light-1 opacity-70"
+              disabled=""
+            >
+              Out of stock
+            </button>
+          </div>
+        </div>
+        <div
+          class="grid lg:hidden bottom-0 left-0 right-0 p-4 bg-dark-2 shadow-all fixed"
+        >
+          <button
+            class="w-full bg-highlight-1 p-3 rounded text-xl text-light-1 opacity-70"
+            disabled=""
+          >
+            Out of stock
+          </button>
+        </div>
+      </div>
+      <div>
+        Loading...
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

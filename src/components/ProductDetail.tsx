@@ -3,12 +3,12 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { elementAboveViewPortBottom } from '../helpers/elementAboveViewPortBottom'
 import { useCustomNdk } from '../hooks/useCustomNdk'
 import { useGetProductEvent } from '../hooks/useGetProductEvent'
+import { ShippingInfo } from '../types'
 import { AddToCartButton } from './AddToCartButton'
 import { Error } from './Error'
 import { LoadingAnimation } from './icons/LoadingAnimation'
 import { ImageSlider } from './ImageSlider'
 import { TagList } from './TagList'
-import { ShippingInfo } from './types'
 
 type Props = {
     id?: string
@@ -37,9 +37,9 @@ export const ProductDetail = ({ id = '' }: Props) => {
         }
     }, [handleScroll])
 
-    const { productInfo, content, eose } = useGetProductEvent({ productId })
+    const { event, content, eose } = useGetProductEvent({ productId })
     if (!productId) return <Error>Product Detail: Missing attribute data-id</Error>
-    const isLoading = !productInfo || !content
+    const isLoading = !event || !content
 
     return (
         <div className="flex justify-center">
@@ -94,7 +94,7 @@ export const ProductDetail = ({ id = '' }: Props) => {
                             </div>
                         )}
                         {!isLoading ? (
-                            <TagList tags={productInfo.tags} />
+                            <TagList tags={event.tags} />
                         ) : (
                             <div className="animate-pulse">
                                 <TagList tags={Array(DEFAULTS.PLACEHOLDER_TAGS).fill(['t', '      '])} />

@@ -11,6 +11,6 @@ export type NIP15Product = {
     currency: string
     price: number
     quantity: number
-    specs: string[][]
+    specs?: string[][]
     shipping: ShippingInfo[]
 }

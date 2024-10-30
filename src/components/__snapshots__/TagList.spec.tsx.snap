@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TagList renders tags correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="flex flex-row gap-1 flex-wrap"
+  >
+    <a
+      class="px-2 py-1 text-xs bg-light-1 text-dark-1 rounded cursor-pointer"
+      href="/shop?tags=cat"
+    >
+      cat
+    </a>
+    <a
+      class="px-2 py-1 text-xs bg-light-1 text-dark-1 rounded cursor-pointer"
+      href="/shop?tags=balaclava"
+    >
+      balaclava
+    </a>
+  </div>
+</DocumentFragment>
+`;

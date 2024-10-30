@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="bg-red-700 text-white p-4 rounded text-center"
+  >
+    Oops
+  </div>
+</DocumentFragment>
+`;

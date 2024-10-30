@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductCarousel renders error when no pubkey is passed 1`] = `
+<DocumentFragment>
+  <div
+    class="bg-red-700 text-white p-4 rounded text-center"
+  >
+    Product Carousel: Missing attribute data-pubkey
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ProductCarousel renders product carousel correctly 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="relative w-full flex gap-4 snap-x overflow-x-auto"
+    >
+      <div
+        class="snap-center flex-shrink-0 w-3/4 px-4 md:w-3/5 lg:px-1 lg:w-1/6"
+      >
+        <a
+          class="grid grid-cols-1 gap-1"
+          href="/product/Cat%20Balaclava%20-%20Cactus/0f1a3984-7a72-4c6f-b1dc-bc170b6c4d8e"
+        >
+          <div
+            class="w-full relative aspect-[2/3] overflow-hidden"
+          >
+            <div
+              class="absolute inset-0 flex justify-center items-center -z-1"
+            >
+              <svg
+                class="animate-spin h-7 w-7 text-light-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  class="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  stroke-width="4"
+                />
+                <path
+                  class="opacity-75"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+            <img
+              alt=""
+              class="w-full h-full object-cover"
+              src="https://f004.backblazeb2.com/file/plebeian-market/P_listing_BHQQ_media_3041b54d1a0b9de92aa91999214b8848bc6951fe7afb5f9b3ead59d69d03aaf7.jpeg"
+              width="340"
+            />
+            <img
+              alt=""
+              class="object-cover w-full h-full absolute top-0 opacity-0 hover:opacity-100 transition-opacity duration-500"
+              src="https://f004.backblazeb2.com/file/plebeian-market/P_listing_BHQQ_media_3041b54d1a0b9de92aa91999214b8848bc6951fe7afb5f9b3ead59d69d03aaf8.jpeg"
+              width="340"
+            />
+          </div>
+          <div
+            class="px-2"
+          >
+            <h3
+              class="text-xl font-bold"
+            >
+              Cat Balaclava - Cactus
+            </h3>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

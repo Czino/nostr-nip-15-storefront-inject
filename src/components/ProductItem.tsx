@@ -1,6 +1,6 @@
 import { getImageUrl } from '../helpers/getImageUrl'
+import { NIP15Product } from '../types'
 import { LoadingAnimation } from './icons/LoadingAnimation'
-import { NIP15Product } from './types'
 
 const DEFAULTS = {
     WIDTH: 340,
@@ -14,12 +14,14 @@ export const ProductItem = ({ product, width = DEFAULTS.WIDTH, imageProxy }: Pro
             </div>
             <img
                 src={getImageUrl(product.images[0], width, imageProxy)}
+                width={width}
                 className="w-full h-full object-cover"
                 alt=""
             />
             {!!product.images[1] && (
                 <img
                     src={getImageUrl(product.images[1], width, imageProxy)}
+                    width={width}
                     className={[
                         'object-cover w-full h-full absolute top-0',
                         'opacity-0 hover:opacity-100 transition-opacity duration-500',
