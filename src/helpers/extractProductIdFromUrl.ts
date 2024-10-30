@@ -1,6 +1,7 @@
 export const extractProductIdFromUrl = (url: string, pattern: string) => {
     const regexPattern = pattern
         .replace(/\$/gu, '\\$')
+        .replace(/\./gu, '\\.')
         .replace(/\//gu, '\\/')
         .replace(/\?/gu, '\\?')
         .replace(/\\\$PRODUCTNAME/gu, '([^/=&]+)')

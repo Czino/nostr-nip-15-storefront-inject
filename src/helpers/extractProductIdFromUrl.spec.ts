@@ -12,6 +12,12 @@ describe('extractProductIdFromUrl', () => {
         ).toBe(productId)
         expect(
             extractProductIdFromUrl(
+                `https://czino.github.io/nostr-nip-15-storefront-inject/?product=${productId}`,
+                'https://czino.github.io/nostr-nip-15-storefront-inject/?product=$PRODUCTID',
+            ),
+        ).toBe(productId)
+        expect(
+            extractProductIdFromUrl(
                 `https://czino.github.io/nostr-nip-15-storefront-inject/product/${productId}/${productName}`,
                 '/product/$PRODUCTID/$PRODUCTNAME',
             ),
