@@ -37,7 +37,9 @@
             const $examples = document.querySelectorAll('main > div')
 
             const showExample = (id) => {
-                const $navItem = document.querySelector(`a[href="/nostr-nip-15-storefront-inject#${id.replace('-dynamic', '')}"]`)
+                const $navItem = document.querySelector(
+                    `a[href="/nostr-nip-15-storefront-inject#${id.replace('-dynamic', '')}"]`,
+                )
                 const $currentExample = document.getElementById(id)
                 $navItems.forEach(($current) => {
                     $current.classList.remove('bg-highlight-1')
