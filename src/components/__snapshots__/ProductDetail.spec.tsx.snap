@@ -173,11 +173,13 @@ exports[`ProductDetail renders product detail correctly 1`] = `
                 Get in touch:
               </h3>
               <div
-                class="grid grid-cols-3 gap-2"
+                class="grid gap-2 grid-cols-2"
               >
                 <a
                   class="flex justify-center w-full bg-dark-2 border border-highlight-1 p-3 rounded text-xl text-light-1"
                   href="https://njump.me/npub1l4g3mv772y0s0vw7zc6w7nnq87m62xh4k998vv9cmu83h5x8qh3s6eklc5"
+                  rel="noreferrer"
+                  target="_blank"
                 >
                   <svg
                     class="h-10"
@@ -194,6 +196,8 @@ exports[`ProductDetail renders product detail correctly 1`] = `
                 <a
                   class="flex justify-center w-full bg-dark-2 border border-highlight-1 p-3 rounded text-xl text-light-1"
                   href="https://plebeian.market/product/0f1a3984-7a72-4c6f-b1dc-bc170b6c4d8e"
+                  rel="noreferrer"
+                  target="_blank"
                 >
                   <svg
                     class="h-10 text-light-1 fill-light-1"
@@ -287,11 +291,13 @@ exports[`ProductDetail renders product detail correctly 1`] = `
               Get in touch:
             </h3>
             <div
-              class="grid grid-cols-3 gap-2"
+              class="grid gap-2 grid-cols-2"
             >
               <a
                 class="flex justify-center w-full bg-dark-2 border border-highlight-1 p-3 rounded text-xl text-light-1"
                 href="https://njump.me/npub1l4g3mv772y0s0vw7zc6w7nnq87m62xh4k998vv9cmu83h5x8qh3s6eklc5"
+                rel="noreferrer"
+                target="_blank"
               >
                 <svg
                   class="h-10"
@@ -308,6 +314,8 @@ exports[`ProductDetail renders product detail correctly 1`] = `
               <a
                 class="flex justify-center w-full bg-dark-2 border border-highlight-1 p-3 rounded text-xl text-light-1"
                 href="https://plebeian.market/product/0f1a3984-7a72-4c6f-b1dc-bc170b6c4d8e"
+                rel="noreferrer"
+                target="_blank"
               >
                 <svg
                   class="h-10 text-light-1 fill-light-1"
