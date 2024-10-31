@@ -3,10 +3,11 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { GLOBAL_DEFAULTS } from '../constants'
 import { elementAboveViewPortBottom } from '../helpers/elementAboveViewPortBottom'
 import { extractProductIdFromUrl } from '../helpers/extractProductIdFromUrl'
+import { getGetInTouchUrl } from '../helpers/getGetInTouchUrl'
 import { useCustomNdk } from '../hooks/useCustomNdk'
 import { useGetProductEvent } from '../hooks/useGetProductEvent'
 import { ShippingInfo } from '../types'
-import { AddToCartButton } from './AddToCartButton'
+import { AddToCartButtons } from './AddToCartButtons'
 import { Error } from './Error'
 import { LoadingAnimation } from './icons/LoadingAnimation'
 import { ImageSlider } from './ImageSlider'
@@ -16,12 +17,13 @@ type Props = {
     id?: string
     productUrl?: string
     showPrice?: boolean
+    addToCartUrl?: string
 }
 const DEFAULTS = {
     PLACEHOLDER_TAGS: 4,
     PRODUCTURL: GLOBAL_DEFAULTS.PRODUCTURL,
 }
-export const ProductDetail = ({ id = '', productUrl = DEFAULTS.PRODUCTURL, showPrice }: Props) => {
+export const ProductDetail = ({ id = '', productUrl = DEFAULTS.PRODUCTURL, showPrice, addToCartUrl }: Props) => {
     const [customNdk] = useCustomNdk()
     const productId = id || extractProductIdFromUrl(window.location.href, productUrl) || ''
     useNostrHooks(customNdk)
@@ -44,13 +46,14 @@ export const ProductDetail = ({ id = '', productUrl = DEFAULTS.PRODUCTURL, showP
     const { event, content, eose } = useGetProductEvent({ productId })
     if (!productId) return <Error>Product Detail: Missing attribute data-id</Error>
     const isLoading = !event || !content
-
+    const getInTouchUrl =
+        addToCartUrl && content ? getGetInTouchUrl(addToCartUrl, content?.id, content.name) : undefined
     return (
         <div className="flex justify-center">
             <div className="max-w-[1600px] w-full">
-                <div className="grid lg:grid-cols-2 gap-4 items-start">
+                <div className="grid gap-4 items-start lg:grid-cols-2">
                     <div className="relative w-full aspect-[3/4]">
-                        <div className="absolute inset-0 flex justify-center items-center">
+                        <div className="flex absolute inset-0 justify-center items-center">
                             <LoadingAnimation />
                         </div>
                         <div className="relative z-1">{!isLoading && <ImageSlider images={content.images} />}</div>
@@ -59,7 +62,7 @@ export const ProductDetail = ({ id = '', productUrl = DEFAULTS.PRODUCTURL, showP
                         {!isLoading ? (
                             <h1 className="text-4xl">{content.name}</h1>
                         ) : (
-                            <div className="animate-pulse bg-light-1 w-1/2 rounded-full text-4xl"> </div>
+                            <div className="w-1/2 text-4xl rounded-full animate-pulse bg-light-1"> </div>
                         )}
                         <div className="grid grid-cols-1 gap-2">
                             {!isLoading ? (
@@ -68,7 +71,7 @@ export const ProductDetail = ({ id = '', productUrl = DEFAULTS.PRODUCTURL, showP
                                         {showPrice ? content.currency + content.price : 'Name your price'}
                                     </div>
                                     <div>
-                                        <h2 className="font-bold text-xl">Shipping</h2>
+                                        <h2 className="text-xl font-bold">Shipping</h2>
                                         {content.shipping
                                             .sort((a: ShippingInfo, b: ShippingInfo) => a.cost - b.cost)
                                             .map((shipping) => (
@@ -81,11 +84,11 @@ export const ProductDetail = ({ id = '', productUrl = DEFAULTS.PRODUCTURL, showP
                                 </>
                             ) : (
                                 <>
-                                    <div className="w-1/3 animate-pulse text-xl rounded-full bg-light-1"> </div>
-                                    <div className="w-1/4 grid grid-cols-1 gap-1">
-                                        <div className="animate-pulse text-xl rounded-full bg-light-1 "></div>
-                                        <div className="animate-pulse rounded-full bg-light-1"> </div>
-                                        <div className="animate-pulse rounded-full bg-light-1"> </div>
+                                    <div className="w-1/3 text-xl rounded-full animate-pulse bg-light-1"> </div>
+                                    <div className="grid grid-cols-1 gap-1 w-1/4">
+                                        <div className="text-xl rounded-full animate-pulse bg-light-1"></div>
+                                        <div className="rounded-full animate-pulse bg-light-1"> </div>
+                                        <div className="rounded-full animate-pulse bg-light-1"> </div>
                                     </div>
                                 </>
                             )}
@@ -94,9 +97,9 @@ export const ProductDetail = ({ id = '', productUrl = DEFAULTS.PRODUCTURL, showP
                             <div>{content.description}</div>
                         ) : (
                             <div className="grid grid-cols-1 gap-1">
-                                <div className="animate-pulse rounded-full bg-light-1"> </div>
-                                <div className="animate-pulse rounded-full bg-light-1"> </div>
-                                <div className="animate-pulse rounded-full bg-light-1"> </div>
+                                <div className="rounded-full animate-pulse bg-light-1"> </div>
+                                <div className="rounded-full animate-pulse bg-light-1"> </div>
+                                <div className="rounded-full animate-pulse bg-light-1"> </div>
                             </div>
                         )}
                         {!isLoading ? (
@@ -107,7 +110,14 @@ export const ProductDetail = ({ id = '', productUrl = DEFAULTS.PRODUCTURL, showP
                             </div>
                         )}
                         <div ref={ctaRef}>
-                            <AddToCartButton enabled={!!content?.quantity} />
+                            {!!content && (
+                                <AddToCartButtons
+                                    productId={content.id}
+                                    npub={event?.author.npub}
+                                    url={getInTouchUrl}
+                                    enabled={!!content.quantity}
+                                />
+                            )}
                         </div>
                     </div>
                     <div
@@ -116,7 +126,14 @@ export const ProductDetail = ({ id = '', productUrl = DEFAULTS.PRODUCTURL, showP
                             showFixedCTA ? 'fixed' : 'hidden',
                         ].join(' ')}
                     >
-                        <AddToCartButton enabled={!!content?.quantity} />
+                        {content && (
+                            <AddToCartButtons
+                                enabled={!!content.quantity}
+                                productId={content.id}
+                                npub={event?.author.npub}
+                                url={getInTouchUrl}
+                            />
+                        )}
                     </div>
                 </div>
                 {!eose && <div>Loading...</div>}

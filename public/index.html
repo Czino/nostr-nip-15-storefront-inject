@@ -5,8 +5,8 @@
         <title>NIP-15</title>
     </head>
 
-    <body class="bg-dark-1 text-light-1 pt-20">
-        <nav class="w-full flex flex-row fixed top-0 z-1 bg-dark-2 shadow">
+    <body class="pt-20 bg-dark-1 text-light-1">
+        <nav class="flex fixed top-0 flex-row w-full shadow z-1 bg-dark-2">
             <a href="/nostr-nip-15-storefront-inject#list" class="p-4 bg-dark-2">Product list</a>
             <a href="/nostr-nip-15-storefront-inject#carousel" class="p-4 bg-dark-2">Carousel</a>
             <a href="/nostr-nip-15-storefront-inject#detail" class="p-4 bg-dark-2">Product Detail</a>
@@ -20,17 +20,17 @@
             ></div>
             <div
                 id="carousel"
-                class="nostr-product-carousel hidden"
+                class="hidden nostr-product-carousel"
                 data-pubkey="fd511db3de511f07b1de1634ef4e603fb7a51af5b14a7630b8df0f1bd0c705e3"
                 data-show-price="true"
             ></div>
             <div
                 id="detail"
-                class="nostr-product-detail hidden"
+                class="hidden nostr-product-detail"
                 data-id="0f1a3984-7a72-4c6f-b1dc-bc170b6c4d8e"
                 data-show-price="true"
             ></div>
-            <div id="detail-dynamic" class="nostr-product-detail hidden" data-show-price="true"></div>
+            <div id="detail-dynamic" class="hidden nostr-product-detail" data-show-price="true"></div>
         </main>
         <script>
             const $navItems = document.querySelectorAll('nav a')
