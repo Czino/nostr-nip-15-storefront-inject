@@ -12,10 +12,10 @@ type Props = {
     productUrl?: string
     tags?: NDKTag[]
     imageProxy?: string
-    showPrice?: boolean
+    showPrice?: string
     relays?: string
 }
-export const ProductList = ({ pubkey = '', productUrl, tags, imageProxy, showPrice = true, relays = '' }: Props) => {
+export const ProductList = ({ pubkey = '', productUrl, tags, imageProxy, showPrice = 'true', relays = '' }: Props) => {
     const [customNdk] = useCustomNdk({ relays: relays ? relays.split(',') : undefined })
     const [searchTags] = useState(tags || getTagsFromUrl(window.location.href))
 
@@ -33,7 +33,7 @@ export const ProductList = ({ pubkey = '', productUrl, tags, imageProxy, showPri
                         product={productInfo}
                         productUrl={productUrl}
                         width={400}
-                        showPrice={showPrice}
+                        showPrice={showPrice === 'true'}
                         imageProxy={imageProxy}
                     />
                 ))}

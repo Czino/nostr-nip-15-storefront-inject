@@ -10,7 +10,7 @@ const DEFAULTS = {
 type Props = {
     pubkey?: string
     productUrl?: string
-    showPrice?: boolean
+    showPrice?: string
     limit?: number
     imageProxy?: string
     relays?: string
@@ -18,7 +18,7 @@ type Props = {
 export const ProductCarousel = ({
     pubkey = '',
     productUrl,
-    showPrice = true,
+    showPrice = 'true',
     limit = DEFAULTS.LIMIT,
     imageProxy,
     relays = '',
@@ -40,7 +40,7 @@ export const ProductCarousel = ({
                         <ProductItem
                             product={productInfo}
                             productUrl={productUrl}
-                            showPrice={showPrice}
+                            showPrice={showPrice === 'true'}
                             width={340}
                             imageProxy={imageProxy}
                         />

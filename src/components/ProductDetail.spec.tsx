@@ -22,7 +22,7 @@ describe('ProductDetail', () => {
     })
     it('renders product detail without price', () => {
         mockUseSubscribe.mockReturnValueOnce({ events: [productEvent], eose: true })
-        const { asFragment } = render(<ProductDetail id={productInfo.id} showPrice={false} />)
+        const { asFragment } = render(<ProductDetail id={productInfo.id} showPrice="false" />)
         expect(asFragment()).toMatchDiffSnapshot(base)
     })
 })

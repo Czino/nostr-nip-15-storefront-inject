@@ -19,7 +19,7 @@ describe('ProductCarousel', () => {
     it('renders product carousel correctly without price', () => {
         mockUseSubscribe.mockReturnValue({ events: [productEvent], eose: true })
 
-        const { asFragment } = render(<ProductCarousel pubkey="pubkey" showPrice={false} />)
+        const { asFragment } = render(<ProductCarousel pubkey="pubkey" showPrice="false" />)
         expect(asFragment()).toMatchDiffSnapshot(base)
     })
 })
