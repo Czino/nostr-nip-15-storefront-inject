@@ -127,6 +127,11 @@ exports[`ProductDetail renders product detail correctly 1`] = `
           <div
             class="grid grid-cols-1 gap-2"
           >
+            <div
+              class="text-xl italic"
+            >
+              USD21
+            </div>
             <div>
               <h2
                 class="text-xl font-bold"
@@ -398,142 +403,29 @@ exports[`ProductDetail renders product detail correctly 1`] = `
 `;
 
 exports[`ProductDetail renders product detail with placeholders correctly 1`] = `
-<DocumentFragment>
-  <div
-    class="flex justify-center"
-  >
-    <div
-      class="max-w-[1600px] w-full"
-    >
-      <div
-        class="grid gap-4 items-start lg:grid-cols-2"
-      >
-        <div
-          class="relative w-full aspect-[3/4]"
-        >
-          <div
-            class="flex absolute inset-0 justify-center items-center"
-          >
-            <svg
-              class="animate-spin h-7 w-7 text-light-1"
-              fill="none"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle
-                class="opacity-25"
-                cx="12"
-                cy="12"
-                r="10"
-                stroke="currentColor"
-                stroke-width="4"
-              />
-              <path
-                class="opacity-75"
-                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                fill="currentColor"
-              />
-            </svg>
-          </div>
-          <div
-            class="relative z-1"
-          />
-        </div>
-        <div
-          class="grid grid-cols-1 gap-4 p-4 lg:p-0"
-        >
-          <div
-            class="w-1/2 text-4xl rounded-full animate-pulse bg-light-1"
-          >
-             
-          </div>
-          <div
-            class="grid grid-cols-1 gap-2"
-          >
+"Snapshot Diff:
+  Comparing two different types of values. Expected [32mobject[39m but received [31mundefined[39m."
+`;
+
+exports[`ProductDetail renders product detail without price 1`] = `
+"Snapshot Diff:
+- First value
++ Second value
+
+@@ -112,10 +112,15 @@
+              Cat Balaclava - Cactus
+            </h1>
             <div
-              class="w-1/3 text-xl rounded-full animate-pulse bg-light-1"
+              class=\\"grid grid-cols-1 gap-2\\"
             >
-               
-            </div>
-            <div
-              class="grid grid-cols-1 gap-1 w-1/4"
-            >
-              <div
-                class="text-xl rounded-full animate-pulse bg-light-1"
-              />
-              <div
-                class="rounded-full animate-pulse bg-light-1"
-              >
-                 
-              </div>
-              <div
-                class="rounded-full animate-pulse bg-light-1"
-              >
-                 
-              </div>
-            </div>
-          </div>
-          <div
-            class="grid grid-cols-1 gap-1"
-          >
-            <div
-              class="rounded-full animate-pulse bg-light-1"
-            >
-               
-            </div>
-            <div
-              class="rounded-full animate-pulse bg-light-1"
-            >
-               
-            </div>
-            <div
-              class="rounded-full animate-pulse bg-light-1"
-            >
-               
-            </div>
-          </div>
-          <div
-            class="animate-pulse"
-          >
-            <div
-              class="flex flex-row gap-1 flex-wrap"
-            >
-              <a
-                class="px-2 py-1 text-xs bg-light-1 text-dark-1 rounded cursor-pointer"
-                href="/shop?tags=   "
-              >
-                   
-              </a>
-              <a
-                class="px-2 py-1 text-xs bg-light-1 text-dark-1 rounded cursor-pointer"
-                href="/shop?tags=      "
-              >
-                      
-              </a>
-              <a
-                class="px-2 py-1 text-xs bg-light-1 text-dark-1 rounded cursor-pointer"
-                href="/shop?tags=    "
-              >
-                    
-              </a>
-              <a
-                class="px-2 py-1 text-xs bg-light-1 text-dark-1 rounded cursor-pointer"
-                href="/shop?tags=     "
-              >
-                     
-              </a>
-            </div>
-          </div>
-          <div />
-        </div>
-        <div
-          class="grid lg:hidden bottom-0 left-0 right-0 p-4 bg-dark-2 shadow-all fixed"
-        />
-      </div>
-      <div>
-        Loading...
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
++             <div
++               class=\\"text-xl italic\\"
++             >
++               USD21
++             </div>
+              <div>
+                <h2
+                  class=\\"text-xl font-bold\\"
+                >
+                  Shipping"
 `;

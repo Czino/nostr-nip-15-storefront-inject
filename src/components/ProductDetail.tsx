@@ -30,7 +30,7 @@ type Props = {
     id?: string
     productUrl?: string
     addToCartUrl?: string
-    showPrice?: boolean
+    showPrice?: string
     priceInfo?: string
     relays?: string
 }
@@ -46,7 +46,7 @@ const DEFAULTS = {
 export const ProductDetail = ({
     id = '',
     productUrl = DEFAULTS.PRODUCTURL,
-    showPrice,
+    showPrice = 'true',
     priceInfo,
     addToCartUrl,
     relays = '',
@@ -97,7 +97,7 @@ export const ProductDetail = ({
                                     <Price
                                         price={content.price}
                                         currency={content.currency}
-                                        showPrice={showPrice}
+                                        showPrice={showPrice === 'true'}
                                         priceInfo={priceInfo}
                                     />
                                     <div>
