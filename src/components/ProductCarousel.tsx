@@ -18,7 +18,7 @@ type Props = {
 export const ProductCarousel = ({
     pubkey = '',
     productUrl,
-    showPrice,
+    showPrice = true,
     limit = DEFAULTS.LIMIT,
     imageProxy,
     relays = '',

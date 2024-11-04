@@ -15,7 +15,7 @@ type Props = {
     showPrice?: boolean
     relays?: string
 }
-export const ProductList = ({ pubkey = '', productUrl, tags, imageProxy, showPrice, relays = '' }: Props) => {
+export const ProductList = ({ pubkey = '', productUrl, tags, imageProxy, showPrice = true, relays = '' }: Props) => {
     const [customNdk] = useCustomNdk({ relays: relays ? relays.split(',') : undefined })
     const [searchTags] = useState(tags || getTagsFromUrl(window.location.href))
 

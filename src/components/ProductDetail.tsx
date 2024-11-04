@@ -46,7 +46,7 @@ const DEFAULTS = {
 export const ProductDetail = ({
     id = '',
     productUrl = DEFAULTS.PRODUCTURL,
-    showPrice,
+    showPrice = true,
     priceInfo,
     addToCartUrl,
     relays = '',

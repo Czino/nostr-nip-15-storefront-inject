@@ -10,6 +10,27 @@ exports[`ProductList renders error when no pubkey is passed 1`] = `
 </DocumentFragment>
 `;
 
+exports[`ProductList renders product carousel correctly without price 1`] = `
+"Snapshot Diff:
+- First value
++ Second value
+
+@@ -53,10 +53,13 @@
+            <h3
+              class=\\"text-xl font-bold\\"
+            >
+              Cat Balaclava - Cactus
+            </h3>
++           <div>
++             USD21
++           </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </DocumentFragment>"
+`;
+
 exports[`ProductList renders product list correctly 1`] = `
 <DocumentFragment>
   <div>
@@ -68,6 +89,9 @@ exports[`ProductList renders product list correctly 1`] = `
           >
             Cat Balaclava - Cactus
           </h3>
+          <div>
+            USD21
+          </div>
         </div>
       </a>
     </div>
