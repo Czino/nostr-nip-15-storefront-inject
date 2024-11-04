@@ -1,9 +1,14 @@
 import NDK from '@nostr-dev-kit/ndk'
 import { useEffect, useState } from 'react'
-import { relays } from '../constants'
+import { DEFAULT_RELAYS } from '../constants'
 
-export const useCustomNdk = () => {
-    const [customNdk, setCustomNdk] = useState<NDK>(new NDK({ explicitRelayUrls: relays }))
+type Props = {
+    relays?: string[]
+}
+export const useCustomNdk = ({ relays = [] }: Props) => {
+    const [customNdk, setCustomNdk] = useState<NDK>(
+        new NDK({ explicitRelayUrls: relays.length ? relays : DEFAULT_RELAYS }),
+    )
 
     useEffect(() => {
         customNdk.connect()

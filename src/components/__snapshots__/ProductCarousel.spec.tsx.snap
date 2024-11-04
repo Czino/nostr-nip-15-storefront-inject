@@ -14,7 +14,7 @@ exports[`ProductCarousel renders product carousel correctly 1`] = `
 <DocumentFragment>
   <div>
     <div
-      class="relative w-full flex gap-4 snap-x overflow-x-auto"
+      class="flex overflow-x-auto relative gap-4 w-full snap-x"
     >
       <div
         class="snap-center flex-shrink-0 w-3/4 px-4 md:w-3/5 lg:px-1 lg:w-1/6"

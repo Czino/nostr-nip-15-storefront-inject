@@ -13,9 +13,17 @@ type Props = {
     showPrice?: boolean
     limit?: number
     imageProxy?: string
+    relays?: string
 }
-export const ProductCarousel = ({ pubkey = '', productUrl, showPrice, limit = DEFAULTS.LIMIT, imageProxy }: Props) => {
-    const [customNdk] = useCustomNdk()
+export const ProductCarousel = ({
+    pubkey = '',
+    productUrl,
+    showPrice,
+    limit = DEFAULTS.LIMIT,
+    imageProxy,
+    relays = '',
+}: Props) => {
+    const [customNdk] = useCustomNdk({ relays: relays ? relays.split(',') : undefined })
     useNostrHooks(customNdk)
     const { productInfos, eose } = useGetProductEvents({ pubkey, limit })
     const availableProducts = productInfos.filter((productInfo) => productInfo?.quantity >= 0)
@@ -23,7 +31,7 @@ export const ProductCarousel = ({ pubkey = '', productUrl, showPrice, limit = DE
 
     return (
         <div>
-            <div className="relative w-full flex gap-4 snap-x overflow-x-auto">
+            <div className="flex overflow-x-auto relative gap-4 w-full snap-x">
                 {availableProducts.map((productInfo) => (
                     <div
                         key={productInfo.id}

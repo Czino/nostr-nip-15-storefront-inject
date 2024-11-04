@@ -13,9 +13,10 @@ type Props = {
     tags?: NDKTag[]
     imageProxy?: string
     showPrice?: boolean
+    relays?: string
 }
-export const ProductList = ({ pubkey = '', productUrl, tags, imageProxy, showPrice }: Props) => {
-    const [customNdk] = useCustomNdk()
+export const ProductList = ({ pubkey = '', productUrl, tags, imageProxy, showPrice, relays = '' }: Props) => {
+    const [customNdk] = useCustomNdk({ relays: relays ? relays.split(',') : undefined })
     const [searchTags] = useState(tags || getTagsFromUrl(window.location.href))
 
     useNostrHooks(customNdk)
@@ -25,7 +26,7 @@ export const ProductList = ({ pubkey = '', productUrl, tags, imageProxy, showPri
 
     return (
         <div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {availableProducts.map((productInfo) => (
                     <ProductItem
                         key={productInfo.id}

@@ -23,13 +23,20 @@ When the Javascript is included it will execute after page load and look for HTM
 
 Each HTML element will need either the stall pubkey or the product id to function. The attribute to add is `data-pubkey` or `data-id`
 
+
+## Options
+- `data-pubkey` (relevant for product listings): fetch product listings from given pubkey
+- `data-id` (relevant for product details): fetch product details from given product id
+- `data-show-price` (optional): if set to `false`, then prices will not be shown on product items
+- `data-price-info` (optional): if set will add additional information before the price (e.g. `Production price`)
+- `data-relays` (optional): comma-separated list of relay URLs (default `wss://nostr.mom/`)
+- `data-product-url` (optional): custom add to cart URL see [Dynamic Product URLs](#dynamic-product-urls)
+- `data-image-proxy` (optional): custom URL to proxy images through which is useful for serving different image sizes see [Dynamic Image URLs](#dynamic-image-urls)
+
 ### Example Product Listing
 ```html
 <div class="nostr-product-list" data-pubkey="fd511db3de511f07b1de1634ef4e603fb7a51af5b14a7630b8df0f1bd0c705e3"></div>
 ```
-
-## Options
-- `data-show-price`: if set to `true`, then prices will be shown on product items
 
 ### Example Product Detail
 ```html
