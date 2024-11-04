@@ -13,18 +13,45 @@ import { LoadingAnimation } from './icons/LoadingAnimation'
 import { ImageSlider } from './ImageSlider'
 import { TagList } from './TagList'
 
+type PriceProps = {
+    price: number
+    currency: string
+    showPrice?: boolean
+    priceInfo?: string
+}
+const Price = ({ price, currency, showPrice, priceInfo }: PriceProps) => {
+    if (!showPrice && !priceInfo) return <></>
+    let displayPrice = currency + price
+    if (priceInfo) displayPrice = `${priceInfo}: ${displayPrice}`
+    return <div className="text-xl italic">{showPrice ? displayPrice : priceInfo}</div>
+}
+
 type Props = {
     id?: string
     productUrl?: string
-    showPrice?: boolean
     addToCartUrl?: string
+    showPrice?: boolean
+    priceInfo?: string
+    relays?: string
 }
 const DEFAULTS = {
-    PLACEHOLDER_TAGS: 4,
+    PLACEHOLDER_TAGS: [
+        ['t', '   '],
+        ['t', '      '],
+        ['t', '    '],
+        ['t', '     '],
+    ],
     PRODUCTURL: GLOBAL_DEFAULTS.PRODUCTURL,
 }
-export const ProductDetail = ({ id = '', productUrl = DEFAULTS.PRODUCTURL, showPrice, addToCartUrl }: Props) => {
-    const [customNdk] = useCustomNdk()
+export const ProductDetail = ({
+    id = '',
+    productUrl = DEFAULTS.PRODUCTURL,
+    showPrice,
+    priceInfo,
+    addToCartUrl,
+    relays = '',
+}: Props) => {
+    const [customNdk] = useCustomNdk({ relays: relays ? relays.split(',') : undefined })
     const productId = id || extractProductIdFromUrl(window.location.href, productUrl) || ''
     useNostrHooks(customNdk)
     const ctaRef = useRef<HTMLDivElement>(null)
@@ -67,9 +94,12 @@ export const ProductDetail = ({ id = '', productUrl = DEFAULTS.PRODUCTURL, showP
                         <div className="grid grid-cols-1 gap-2">
                             {!isLoading ? (
                                 <>
-                                    <div className="text-xl italic">
-                                        {showPrice ? content.currency + content.price : 'Name your price'}
-                                    </div>
+                                    <Price
+                                        price={content.price}
+                                        currency={content.currency}
+                                        showPrice={showPrice}
+                                        priceInfo={priceInfo}
+                                    />
                                     <div>
                                         <h2 className="text-xl font-bold">Shipping</h2>
                                         {content.shipping
@@ -106,7 +136,7 @@ export const ProductDetail = ({ id = '', productUrl = DEFAULTS.PRODUCTURL, showP
                             <TagList tags={event.tags} />
                         ) : (
                             <div className="animate-pulse">
-                                <TagList tags={Array(DEFAULTS.PLACEHOLDER_TAGS).fill(['t', '      '])} />
+                                <TagList tags={DEFAULTS.PLACEHOLDER_TAGS} />
                             </div>
                         )}
                         <div ref={ctaRef}>

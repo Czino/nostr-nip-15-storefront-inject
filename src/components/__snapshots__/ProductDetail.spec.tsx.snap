@@ -127,11 +127,6 @@ exports[`ProductDetail renders product detail correctly 1`] = `
           <div
             class="grid grid-cols-1 gap-2"
           >
-            <div
-              class="text-xl italic"
-            >
-              Name your price
-            </div>
             <div>
               <h2
                 class="text-xl font-bold"
@@ -505,9 +500,9 @@ exports[`ProductDetail renders product detail with placeholders correctly 1`] = 
             >
               <a
                 class="px-2 py-1 text-xs bg-light-1 text-dark-1 rounded cursor-pointer"
-                href="/shop?tags=      "
+                href="/shop?tags=   "
               >
-                      
+                   
               </a>
               <a
                 class="px-2 py-1 text-xs bg-light-1 text-dark-1 rounded cursor-pointer"
@@ -517,15 +512,15 @@ exports[`ProductDetail renders product detail with placeholders correctly 1`] = 
               </a>
               <a
                 class="px-2 py-1 text-xs bg-light-1 text-dark-1 rounded cursor-pointer"
-                href="/shop?tags=      "
+                href="/shop?tags=    "
               >
-                      
+                    
               </a>
               <a
                 class="px-2 py-1 text-xs bg-light-1 text-dark-1 rounded cursor-pointer"
-                href="/shop?tags=      "
+                href="/shop?tags=     "
               >
-                      
+                     
               </a>
             </div>
           </div>
